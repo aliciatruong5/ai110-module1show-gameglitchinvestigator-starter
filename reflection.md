@@ -5,18 +5,26 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+  The game looked very simple and organized. It looked like everything would be functional with no errors. When I ran my first guess, I saw my first error which was the hints. 
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+  1. The first error I saw was that when I would guess a number that was lower than the secret number, the hint would be "GO LOWER" and the same thing goes for if I were to put a higher number than the secret number, it would say "GO HIGHER"
+  2. The second error that I noticed was that when I would click new game to restart, it would change all the information like number of attempts and the secret number, but it would not allow me to guess a number.
+  3. It seems that the game would also give us one attempt less than the attempts allowed like we have 6 attempts but we only guessed 5 times and it would say game over. 
+  4. Another error would be the range when you would change difficulty. It seems like it is not changing. It looks like it is still 1-100. 
+  5. I also noticed that when I were to put a string as a guess, it would return as that is not a number, but if I were to add a string with a number like hello1, it would be seen as a number and return GO LOWER.
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|   Input    | Expected Behavior | Actual Behavior | Console Output / Error |
+|------------|-------------------|-----------------|------------------------|
+| guess: 4   | "GO HIGHER" hint  | "GO LOWER" hint |        none            |
+|------------|-------------------|-----------------|------------------------|
+| guess: 36  | "GO LOWER" hint   |"GO HIGHER" hint |        none            |
+|------------|-------------------|-----------------|------------------------|
+|  hello1    |That is not a number| "GO LOWER" hint |        none            |
 
 ---
 
