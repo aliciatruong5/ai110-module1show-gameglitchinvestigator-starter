@@ -12,6 +12,9 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 500
     return 1, 100
 
+#FIX: Refactored logic into logic_utils.py,
+# we fixed the string-with-a-number parsing bug by making sure that
+# the input is a valid number and not a string with a number in it.
 def parse_guess(raw: str):
     """
     Parse user input into an int guess.
@@ -36,6 +39,11 @@ def parse_guess(raw: str):
 
     return True, int(number), None
 
+#FIX: Refactored logic into logic_utils.py,
+# we fixed the high/low hint direction bug by
+# making sure the hint points in the correct direction:
+# a guess above the secret tells the player to go LOWER,
+# and a guess below the secret tells them to go HIGHER.
 def check_guess(guess, secret):
     """
     Compare guess to secret and return (outcome, message).
